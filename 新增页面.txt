@@ -1,0 +1,28 @@
+download.html    下载APP页面
+registerH5.html   注册H5页面
+registerSuccess.html  注册成功页面
+
+wxdownload.html 微信端的下载页面
+
+midAutumuFestival.html  中秋节转盘抽奖活动 
+midAutumuAward.html     中秋节我的奖励页面
+
+
+activeHarvest.html  金秋感恩悠兔3重奏
+activityNationalDay.html   国庆活动页面
+moveNotice.html       迁移公告页面
+
+activeHalloween.html   万圣节活动页面
+
+
+11月页面
+activeWinter.html  暖冬三重奏
+
+
+activeDecember.html 双十二活动页面
+
+
+12月份页面
+activeMerry.html     圣诞节活动
+
+activeNewYear.html    元旦活动

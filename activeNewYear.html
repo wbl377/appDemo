@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>新年祈愿活动</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+</head>
+<body>
+	<div class="activeNewTop"></div>
+	<div class="new_main">
+		<div class="new_wall">
+			<div class="wall_box">
+				<form>
+					<input type="text" placeholder="祈愿框(*限20字,许愿结束后将获得祈愿基金)" maxlength="20" class="wall_input"/>
+					<a href="javascript:;" class="wall-btn">确认许愿</a>
+				</form>
+			</div>
+			<div class="wall_list">
+				<ul class="clearfix">
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+					<li>放假回家多陪父母然后照一张全家相你好啊相</li>
+				</ul>
+			</div>
+		</div>
+		<div class="draw_box">
+			<div class="new_draw_main"></div>
+			<a href="javascript:;" class="draw_btn"></a>
+			<i></i>
+			<div class="leftStar">
+				<div class="star1"></div>
+				<div class="star2"></div>
+				<div class="star3"></div>
+			</div>
+			<div class="rightStar">
+				<div class="star4"></div>
+				<div class="star5"></div>
+				<div class="star6"></div>
+			</div>
+		</div>
+	</div>
+	<div class="new_rule_box">
+		<div class="year_box">
+			<div class="newyear_rule"></div>
+			<a href="activeNewAward.html" class="look_notes" >查看我的奖励></a>
+		</div>
+		<div class="new_time"></div>
+	</div>
+
+
+<div class="alertBody">
+	<div class="alert_box">
+		<div class="alert_content">
+			<h6>很遗憾</h6>
+			<!--<p>您还未获得许愿条件</p>-->
+			<span>(很遗憾，您今天的机会已用完)</span>
+		</div>
+
+		<a href="javascript:;" class="alert_btn">确认</a>
+	</div>
+</div>
+
+<div class="alertAward">
+	<div class="award_bbin">
+		<a href="javascript:;" class="award_btn">确认</a>
+	</div>
+</div>
+
+
+<div class="award_alert">
+	<div class="award_alert_box">
+		<a href="javascript:;" class="award_sure">确认</a>
+	</div>
+</div>
+<span class="spanCon" style="display:none;">2</span>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+
+		//许愿按钮的点击判断的代码
+		$('.wall-btn').click(function(){
+			var textContent = $('.wall_input').val();
+			if(textContent == '' ){
+				$('.alertBody').show();
+				$('.alert_content').html('<p style="margin-top:1rem;">输入的内容不能为空！</p>')
+			}else if(textContent == 1){
+				$('.alertBody').show();
+				$('.alert_content').html('<h6>很遗憾</h6><p>您还未获得许愿条件</p>')
+			}else if(textContent == 2){
+				$('.alertBody').show();
+				$('.alert_content').html('<h6>每天只能许愿一次哦</h6><span>(很遗憾，您今天的机会已用完)</span>')
+			}else if(textContent == 5){
+				$('.alertBody').show();
+				$('.alert_content').html('<h6>您已达到领取上限</h6><span>(很遗憾，您的机会已用完)</span>')
+			}else{
+				$('.alertAward').show();
+				$('.wall_list ul').prepend('<li>' + textContent +'</li>');
+				$('.wall_input').val('');
+			}
+		})
+
+		$('.alert_btn').click(function(){
+			$('.alertBody').hide();
+			$('.wall_input').val('');
+
+		})
+
+		$('.award_btn').click(function(){
+			$('.alertAward').hide()
+		})
+
+
+		//新年运签按钮点击代码
+		var spanNum =$('.spanCon').html();
+
+		$('.draw_btn').click(function(){
+
+			if(spanNum > 0){
+				$('.new_draw_main').addClass('addDrawMove');
+				setTimeout(function(){
+					$('.award_alert').show();
+					$('.new_draw_main').removeClass('addDrawMove');
+				},3000)
+			}else if(spanNum==0){
+				$('.alertBody').show();
+				$('.alert_content').html('<h6>很遗憾</h6><p>您还未获得抽签机会</p>')
+			}else{
+				$('.alertBody').show();
+				$('.alert_content').html('<h6>您已达到领取上限</h6><span>(很遗憾，您的机会已用完)</span>')
+			}
+
+			spanNum--;
+			console.log(spanNum);
+
+		})
+
+
+		$('.award_sure').click(function(){
+			$('.award_alert').hide();
+		})
+
+	})
+</script>

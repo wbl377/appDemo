@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>情满中秋</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/lottery.js"></script>
+    <script type="text/javascript" src="js/alias-method.js"></script>
+</head>
+<body>
+	<div class="midTop">
+		<a href="midAutumuAward.html" class='award'>查看我的奖励</a>
+		<!-- 中奖弹出框结构 -->
+		<div class="winning" id="winning">
+	        <div class="recharge recharge_fix">
+	            <div class="inRecharge inRecharge_fix" id="inRecharge">
+	                <p></p>
+	            </div>
+	            <div class="double_down double_up">
+	                <a href="javascript:;"  class="button_5" >确　定</a>
+	                <a href="midAutumuAward.html">我的奖励</a>
+	            </div>
+	            <i></i>
+	        </div>
+	    </div> 
+	    <div id="lottery">
+            <table   border="0" cellpadding="0" cellspacing="3">
+                <tr class="lottery-group">
+                    <td class="lottery-unit td_1 act" data-lottery-reward="iphone7 Plus">
+                    	<img src="images/midAutumn/draw_1.png"/>
+                    </td>
+                    <td class="lottery-unit td_2" data-lottery-reward="100">
+                    	<img src="images/midAutumn/draw_7.png"/>
+                    </td>
+                    <td class="lottery-unit td_3" data-lottery-reward="IPad Air 2">
+                    	<img src="images/midAutumn/draw_3.png"/>
+                    </td>
+                </tr >
+                <tr class="lottery-group">
+                    <td class="lottery-unit td_4" data-lottery-reward="哈根达斯月饼券">
+                    	<img src="images/midAutumn/draw_8.png"/>
+                    </td>
+                    <td class="td_5"><a href="javascript:;"> 
+                    	<img src="images/midAutumn/draw_9.png"/></a></td>
+                    <td class="lottery-unit td_6" data-lottery-reward="阳澄湖大闸蟹礼券">
+                    	<img src="images/midAutumn/draw_4.png"/>
+                    </td>
+                </tr>
+                <tr class="lottery-group">
+                    <td class="lottery-unit td_7" data-lottery-reward="5000">
+                    	<img src="images/midAutumn/draw_2.png"/>
+                    </td>
+                    <td class="lottery-unit td_8" data-lottery-reward="谢谢参与">
+                    	<img src="images/midAutumn/draw_6.png"/>
+                    </td>
+                    <td class="lottery-unit td_9" data-lottery-reward="1000">
+                    	<img src="images/midAutumn/draw_5.png"/>
+                    </td>
+                </tr>
+            </table>
+            <p class="change">您还剩<b class="lastNum">5</b>次机会</p>
+        </div>
+        <div class="active_time"></div>
+	</div>
+	<div class='midContent'>
+		<div class="active_award">
+			<h2>活动奖励</h2>
+			<ul>
+				<li><span>一等奖</span>  iPhone 7 Plus128G一部（价值6888元）</li>
+				<li><span>二等奖</span>  IPad Air 2 64G一个（价值3588元）</li>
+				<li><span>三等奖</span>  哈根达斯月饼券或阳澄湖大闸蟹礼券（价值498元）</li>
+				<li><span>四等奖</span>  悠兔理财5000元体验金</li>
+				<li><span>五等奖</span>  悠兔理财1000元体验金</li>
+				<li><span>阳光普照奖</span>  悠兔理财100体验金</li>
+			</ul>
+		</div>
+		<div class="active_rule">
+			<h2>活动规则</h2>
+			<ul>
+				<li>
+					<dl>
+						<dt><span>1</span>用户可获得抽奖条件：</dt>
+						<dd>①新用户注册并完成实名认证</dd>
+						<dd>②用户活动期间投资累计满1000元，并满标审核通过后，流标则不计入活动（每满一千一次机会，最多五次机会）</dd>
+						<dd>③用户邀请一个新好友，好友完成实名认证并进行首次投资。（无上限，投资不计数额）</dd>
+					</dl>
+				</li>
+				<li>
+					<p><span>2</span>实物奖品将在活动结束统一确认，悠兔理财客服人工确认无误后，将在3个工作日内以快递的形式发放。具体可咨询客服电话400-820-3122。</p>
+				</li>
+				<li>
+					<p><span>3</span>用户获得的奖励可点击我的奖励查看具体获奖情况，</p>
+				</li>
+				<li>
+					<p><span>4</span>本次活动抽奖次数有限，先到先得，抽完即止，</p>
+				</li>
+				<li>
+					<p><span>5</span>在本活动中发现任何违规操作或作弊行为（包括恶意刷好友、恶意虚假账户等），悠兔将有权取消该账号的活动资格。</p>
+				</li>
+			</ul>
+			<p class="textP">本次活动最终解释权归悠兔理财所有。</p>
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript">
+$(function() {
+	
+	
+		$("#lottery").lottery({
+			selector:     '#lottery',
+			width:        3,
+			height:       3,
+			change:       3,
+			index:        0,    // 初始位置
+			initSpeed:    300,  // 初始转动速度
+			// upStep:       50,   // 加速滚动步长
+			// upMax:        50,   // 速度上限
+			// downStep:     30,   // 减速滚动步长
+			// downMax:      500,  // 减速上限
+			// waiting:      5000, // 匀速转动时长
+			aim: function () {
+				var prizeArray = new Array();
+				var gutoufan = new AliasMethod.Prize(0, "iphone7 Plus", 0.00);
+				prizeArray.push(gutoufan);
+				var dazuiba = new AliasMethod.Prize(1, "100", 0.20);
+				prizeArray.push(dazuiba);
+				var qiandaohu = new AliasMethod.Prize(2, "IPad Air 2", 0.00);
+				prizeArray.push(qiandaohu);
+				var quzhoucai = new AliasMethod.Prize(3, "阳澄湖大闸蟹礼券", 0.00);
+				prizeArray.push(quzhoucai);
+				var laodifang = new AliasMethod.Prize(4, "1000", 0.5);
+				prizeArray.push(laodifang);
+				var huangmenji = new AliasMethod.Prize(5, "谢谢参与", 0.0);
+				prizeArray.push(huangmenji);
+				var zhengbaihui = new AliasMethod.Prize(6, "5000", 0.3);
+				prizeArray.push(zhengbaihui);
+				var dengdeng = new AliasMethod.Prize(7, "哈根达斯月饼券", 0.00);
+				prizeArray.push(dengdeng);
+				
+				AliasMethod.init(prizeArray);
+				return AliasMethod.generate().index;
+			},
+			beforeRoll: function () { // 重写滚动前事件：beforeRoll
+				// console.log(this);
+				//alert(1);
+				console.log('beforeRoll');
+			},
+			afterStop: function (targetElement) {
+				$('#inRecharge p').html('恭喜您获得<span>'+$(targetElement).data('lottery-reward')+'</span>元体验金');
+				$('#winning').show(0,function(){
+					$('.award').show();
+				});
+				
+				//alert($(targetElement).data('lottery-reward'));
+				return false;    // 返回false则禁用默认的弹出提示
+			}
+			
+		});
+
+	//中奖之后的关闭按钮
+	$('.button_5,.recharge_fix i').click(function(){
+
+		$('#winning').hide();
+	})
+
+});
+</script>
+</html>

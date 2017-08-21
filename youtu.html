@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>悠兔理财</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/animate.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+
+	<div class="youtu_index">
+		<div class="circleLine_1">
+			<div class="circleLine_2">
+				<div class="circleLine_3">
+				</div>
+			</div>
+		</div>
+
+		<div class="mainInfo">
+			<div class="youtuInfo">
+				<p class="youP">3</p>
+				<div class="youtuText">
+					<div class="youtuBox">
+						<img src="images/youtu/youtuLogo.png">
+					</div>
+					<p>悠兔理财投资突破</p>
+					<span>0</span>
+					<i>2017.4.13 </i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="youTu">
+		<div class="goOnline animated bounceInDown">
+			<i class="circle_1"></i>
+			<b class="line_1 animated"></b>
+		</div>
+
+		<div class="double_bg animated">
+			<i class="circle_2"></i>
+			<b class="line_2 animated"></b>
+		</div>
+
+		<div class="double12_bg animated">
+			<i class="circle_3"></i>
+			<b class="line_3 animated"></b>
+		</div>
+
+		<div class="newYear animated" >
+			<i class="circle_4"></i>
+			<b class="line_4 animated"></b>
+			<div class="newBg"></div>
+			<div class="graph">
+				<div class="moneyIcon1"></div>
+				<div class="money1_21"></div>
+				<div class="moneyLine_1"></div>
+				<div class="moneyIcon2"></div>
+				<div class="money1_22"></div>
+				<div class="moneyLine_2"></div>
+				<div class="moneyIcon3"></div>
+				<div class="money1_23"></div>
+				<div class="moneyLine_3"></div>
+				<div class="moneyIcon4"></div>
+				<div class="money1_24"></div>
+				<div class="moneyLine_4"></div>
+				<div class="moneyIcon5"></div>
+				<div class="money1_25"></div>
+			</div>
+		</div>
+
+		<div class="newFeb animated" >
+			<i class="circle_5"></i>
+			<b class="line_5 animated"></b>
+
+			<div class="febBg"></div>
+			<div class="febGraph">
+				<div class="text_icon1"></div>
+				<div class="text_l"></div>
+				<div class="text_line1"></div>
+				<div class="text_icon2"></div>
+				<div class="text_2"></div>
+				<div class="text_line2"></div>
+				<div class="text_icon3"></div>
+				<div class="text_3"></div>
+
+			</div>
+		</div>
+
+		<div class="loveDiv animated" >
+			<i class="circle_6"></i>
+			<b class="line_6 animated"></b>
+			<div class="loveTitle"></div>
+			<div class="yuto_love animated">
+				<p>情人节活动</p>
+				<p><span>0</span>（投资金额）</p>
+			</div>
+		</div>
+
+		<div class="yuto_april animated">
+			<i class="circle_7"></i>
+			<div class="aprilTitle"></div>
+			<div class="allMoney">
+				<div class="text_allIcon"></div>
+				<div class="text_line3"></div>
+				<div class="text_icon4"></div>
+				<div class="text_4"></div>
+				<div class="text_line4"></div>
+				<div class="text_icon5"></div>
+				<div class="text_5"></div>
+				<div class="text_line5"></div>
+				<div class="text_icon6"></div>
+				<div class="text_6"></div>
+				<div class="text_line6"></div>
+				<div class="text_icon7"></div>
+				<div class="text_7 animated"></div>
+			</div>
+		</div>
+
+		<a class="emailHref" href="javascript:;">
+			<div class="youtu_email animated"></div>
+		</a>
+	</div>
+
+	<div class="downPng">
+		<div class="downPngBox"></div>
+		<p>向下</p>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var fixedP = $('.youP').text();
+		var timer = setInterval(function(){
+			if(fixedP > 1){
+				fixedP--
+			}else{
+				$('.youP').hide();
+				clearInterval(timer);
+				$('.youtuText').show(function(){
+					add();
+				});
+			}
+			$('.youP').html(fixedP);
+
+		},1000)
+
+
+		function add(){
+			var mathText = $('.youtuText span').text();
+
+			var timrs = setInterval(function(){
+
+				if(mathText < 100000000){
+					mathText =parseInt( mathText + 500000 )
+				}else{
+					clearInterval(timrs);
+					setTimeout(function(){
+						$('.youtu_index').hide();
+						$('.youTu').show();
+					},1500)
+
+				}
+
+				$('.youtuText span').html(mathText)
+
+			},1)
+		}
+
+
+
+	})
+	$(function(){
+
+		//封装监听事件的兼容方法
+		var pfx = ["webkit", "moz", "MS", "o", ""];
+		function PrefixedEvent(element, type, callback) {
+			for (var p = 0; p < pfx.length; p++) {
+				if (!pfx[p]) type = type.toLowerCase();
+				element.addEventListener(pfx[p]+type, callback, false);
+			}
+		}
+
+		function addMath(){
+			var mathText = $('.yuto_love span').text();
+
+			var timres = setInterval(function(){
+
+				if(mathText < 2000000){
+					mathText = parseInt( mathText + 5000 )
+				}else{
+					clearInterval(timres);
+				}
+				$('.yuto_love span').html(mathText)
+			},1)
+		}
+
+
+		PrefixedEvent($('.goOnline')[0],"AnimationEnd",function(){
+			$('.circle_1').show().addClass('addTwinkle');
+			setTimeout(function(){
+				$('.line_1').show().addClass('fadeIn');
+			},500);
+
+			PrefixedEvent($('.line_1')[0],"AnimationEnd",function(){
+				$('.circle_1').hide().removeAttr('class');
+				$('.double_bg').show().addClass('zoomIn');
+
+				PrefixedEvent($('.double_bg')[0],"AnimationEnd",function(){
+					$('.circle_2').show().addClass('addTwinkle');
+					setTimeout(function(){
+						$('.line_2').show().addClass('fadeIn');
+					},500);
+				});
+
+					PrefixedEvent($('.line_2')[0],"AnimationEnd",function(){
+						$('.circle_2').hide().removeAttr('class');
+						$('.double12_bg').show().addClass('zoomInLeft');
+
+						PrefixedEvent($('.double12_bg')[0],"AnimationEnd",function(){
+							$('.circle_3').show().addClass('addTwinkle');
+							setTimeout(function(){
+								$('.line_3').show().addClass('fadeIn');
+							},500);
+						});
+
+						PrefixedEvent($('.line_3')[0],"AnimationEnd",function() {
+							$('.downPng').show();
+							$('.circle_3').hide().removeAttr('class');
+							$('.newYear').addClass('rollIn').show(function(){
+								$('.circle_4').show().addClass('addTwinkle');
+								for(var i=0;i<$('.graph div').length;i++){
+									(function(i){
+										setTimeout(function(){
+											$($('.graph div')[i]).show(500);
+											if(i === $('.graph div').length-1){
+												$('.line_4').addClass('fadeIn').show()
+											}
+										},800*i);
+									})(i);
+								}
+							});
+
+
+							PrefixedEvent($('.line_4')[0],"AnimationEnd",function(){
+								$('.newFeb').addClass('flipInY').show(function(){
+									$('.circle_4').hide().removeAttr('class');
+									$('.circle_5').addClass('addTwinkle').show();
+									for(var i=0;i<$('.febGraph div').length;i++){
+										(function(i){
+											setTimeout(function(){
+												$($('.febGraph div')[i]).show(500);
+												if(i === $('.febGraph div').length-1){
+													$('.line_5').addClass('fadeIn').show(100);
+												}
+											},800*i);
+										})(i);
+									}
+								})
+
+								PrefixedEvent($('.line_5')[0],"AnimationEnd",function(){
+									$('.loveDiv').addClass('rotateIn').show(function(){
+										$('.circle_5').hide().removeAttr('class');
+										$('.circle_6').addClass('addTwinkle').show(100);
+										$('.yuto_love').addClass('fadeIn').show(100,function(){
+											addMath();
+											setTimeout(function(){
+												$('.line_6').show().addClass('fadeIn');
+											},500);
+										})
+
+										PrefixedEvent($('.line_6')[0],"AnimationEnd",function(){
+											$('.yuto_april').addClass('zoomIn').show(function(){
+												$('.circle_6').hide().removeAttr('class');
+												$('.circle_7').addClass('addTwinkle').show(100);
+												for(var i=0;i<$('.allMoney div').length;i++){
+													(function(i){
+														setTimeout(function(){
+															$($('.allMoney div')[i]).show(500);
+															if(i === $('.allMoney div').length-1){
+																$('.text_7').show().addClass('tada');
+															}
+														},800*i);
+													})(i);
+												}
+											})
+
+											PrefixedEvent($('.text_7')[0],"AnimationEnd",function(){
+												$('.youtu_email').addClass('slideInUp ').show();
+
+												$('.downPng').hide();
+
+												$('.circle_7').hide().removeAttr('class');
+												PrefixedEvent($('.youtu_email')[0],"AnimationEnd",function(){
+													$('.emailHref').attr('href','youtu_email.html');
+													$('.youtu_email').addClass('emailUp').removeClass('slideInUp');
+												})
+											})
+										})
+									})
+								})
+							})
+						})
+					})
+			})
+		})
+
+	})
+</script>

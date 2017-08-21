@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>悠兔理财</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/animate.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+<div class="email_Main">
+	<a href="javascript:;">
+		<div class="email_box">
+			<div class="email_text1 "></div>
+			<div class="email_text2 "></div>
+			<div class="email_text3 "></div>
+			<div class="email_text4 "></div>
+			<div class="email_text5 "></div>
+			<div class="email_text6 "></div>
+			<div class="email_text7 "></div>
+			<div class="email_text8 "></div>
+			<div class="email_text9 "></div>
+			<div class="email_text10 "></div>
+			<div class="email_text11 "></div>
+			<div class="email_text12 "></div>
+			<div class="email_text13 "></div>
+			<div class="email_text14 "></div>
+			<div class="email_text15 "></div>
+			<div class="email_text16 "></div>
+			<div class="email_text17 "></div>
+			<div class="email_text18"></div>
+			<div class="email_text19 "></div>
+		</div>
+	</a>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+
+		for(var i=1;i<=$('.email_box div').length;i++){
+
+			(function(i){
+				setTimeout(function(){
+					//console.log(i);
+					$('.email_text'+ i+'').fadeIn(1500);
+
+					if(i === $('.email_box div').length){
+						$('.email_Main a').attr('href','youtu.html')
+					}
+				},800*i);
+
+			})(i);
+
+		}
+
+	})
+</script>

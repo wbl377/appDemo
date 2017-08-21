@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<title>APP下载</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
+</head>
+<body>
+	<div class="wx_appdl">
+		<div class="wx_hd">
+			<a href="javascript:;" class="wxA">iphone</a>
+			<a href="javascript:;" class="wxB">android</a>	
+		</div>
+		<div class="wx_main">
+			<div id="picScroll" class="picScroll">
+				<div class="bd" style="width:1500px;">
+						<ul>
+							<li><img  src="images/images_1.png" /></li>
+							<li><img  src="images/images_2.png" /></li>
+						</ul>
+
+						<ul>
+							<li><img  src="images/images_3.png" /></li>
+							<li><img  src="images/images_4.png" /></li>
+						</ul>
+
+						<ul>
+							<li><img  src="images/images_6.png" /></li>
+							<li><img  src="images/images_5.png" /></li>
+						</ul>
+
+				</div>
+			</div>
+
+			<div class="wx_text">
+				<h5>APP介绍描述</h5>
+				<p>悠兔理财提供最创新的金融技术，利用技术降低借贷的获客、运营、服务、贷后管理成本，从而可以提供更低利率、更好的借贷产品，以及更高收益的投资产品，针对您VIP的需求定制化服务。</p>
+				<dl>
+					<dd>【新手奖励】</dd>
+					<dt>1.  首次注册即可获得2000元体验金（可投资体验标）</dt>
+					<dt>2.  实名认证并首次充值成功可另获得1000元体验金</dt>
+					<dd>【悠兔特点】</dd>
+					<dt>1.  第三方资金托管,账户资金实名认证、同卡进出</dt>
+					<dt>2.  平台用户享有风险担保机制，投资人的投资行为适用于逾期兑付计划</dt>
+					<dt>3.  借款由第三方提供，皆为优质精选借款标的</dt>
+					<dt>4.  分散投资，将资金风险最大程度的分散</dt>
+					<dt>5.  三层防火墙隔离系统，保证用户数据安全</dt>
+					<dd>【联系我们】</dd>
+					<dt>热线电话：400-820-3122</dt>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		TouchSlide({ 
+			slideCell:"#picScroll",
+			//titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+			//autoPage:true, //自动分页
+			pnLoop:"false", // 前后按钮不循环
+			switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+		});
+	</script>
+</body>
+</html>

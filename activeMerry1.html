@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>圣诞节活动</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/boom.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<div class="merry_content">
+		<div class="activeMerry">
+			<div class="merry_title"></div>
+			<div class="merry_count">
+				<p>10</p>
+			</div>
+			<div class="merry_bot">
+				<canvas id="myCanva" class="myCanvas" >您的手机不支持canvas</canvas>
+				<div class="merry_peoper"></div>
+				<div class="snowtree1"></div>
+				<div class="snowtree2" ></div>
+				<div class="merry_hand">
+					<div class="hand_bg"></div>
+					<div class="hand_top"></div>
+					<div class="snowBall" >
+						<div class="btn"></div>
+					</div>
+				</div>
+				<div class="merry_list">
+					<div class="list_box">
+						<ul class="listUl">
+							<li>
+								<p>138****4687 </p>
+								<p>获得5%加息券一张</p>
+							</li>
+							<li>
+								<p>138****4687 </p>
+								<p>获得5%加息券一张</p>
+							</li>
+							<li>
+								<p>138****4687 </p>
+								<p>获得5%加息券一张</p>
+							</li>
+							<li>
+								<p>138****4687 </p>
+								<p>获得5%加息券一张</p>
+							</li>
+							<li>
+								<p>138****4687 </p>
+								<p>获得5%加息券一张</p>
+							</li>
+							<li>
+								<p>138****4687 </p>
+								<p>获得5%加息券一张</p>
+							</li>
+							<li>
+								<p>138****4687 </p>
+								<p>获得2225%加息券一张</p>
+							</li>
+						</ul>
+						<ul class="cloneDiv"></ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="merry_main">
+			<div class="merry_rule"></div>
+			<div class="merry_welfare">
+				<div class="welfare_box">
+					<ul >
+						<li>
+							<p>5%加息券</p>
+							<p>2016.11.23</p>
+						</li>
+						<li>
+							<p>5%加息券</p>
+							<p>2016.11.23</p>
+						</li>
+						<li>
+							<p>10000元体验金</p>
+							<p>2016.11.23</p>
+						</li>
+						<li>
+							<p>5%加息券</p>
+							<p>2016.11.23</p>
+						</li><li>
+						<p>5%加息券</p>
+						<p>2016.11.23</p>
+					</li>
+						<li>
+							<p>5%加息券</p>
+							<p>2016.11.23</p>
+						</li><li>
+						<p>5%加息券</p>
+						<p>2016.11.23</p>
+					</li>
+						<li>
+							<p>5%加息券</p>
+							<p>2016.11.23</p>
+						</li>
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!--弹窗1代码-->
+	<div class="merryLayer">
+		<div class="merryLayerBox">
+			<p>10000元体验金</p>
+			<a href="javascript:;" class="btn1">确 定</a>
+		</div>
+	</div>
+
+	<div class="none_merry">
+		<div class="none_Box">
+			<p>您的次数已用完！</p>
+			<a href="javascript:;" class="btn2">确 定</a>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	//飘雪代码
+	(function(){
+		//树叶的总个数
+		var count = 20;
+		//获取随机数
+		function Random(s,e){return Math.random()*(e-s)+s;};
+		//循环创建树叶的dom元素
+		var fragment = document.createDocumentFragment();
+		for(var i = 0 ; i < count; i ++) {
+			var div = document.createElement("div");
+			div.className = 'leaves';
+			div.innerHTML = '<img src="img'+(Math.round(Random(1,2)))+'.png" alt="">';
+			fragment.appendChild (div);
+		};
+
+		document.body.appendChild(fragment);
+
+		var leaves = document.querySelectorAll('.leaves');
+		[].forEach.call(leaves,function(o,i){
+			var time1 = Random(5,20);
+			var time2 = Random(0.1,0.3);
+			var time3 = Random(3,6);
+			//随机设置left，根据浏览器宽度设置最大值
+			var clientLeft =  Random(60,document.documentElement.clientWidth);
+			o.style.left = clientLeft/38+'rem';
+			//设置animation属性，为了兼容添加了前缀，总共时间和延时时间随机获取
+			o.style.animation = o.style.WebkitAnimation = o.style.MozAnimation = o.style.OAnimation= o.style.MsAnimation='fade '+time1+'s '+ time2+'s linear infinite,move '+time1+'s '+ time2+'s linear infinite';
+			//设置里面图片的animation属性，设置时间，并设置翻转
+			o.children[0].style.animation = o.children[0].style.MozAnimation = o.children[0].style.OAnimation = o.children[0].style.MsAnimation = o.children[0].style.WebkitAnimation = Math.round(Random(0,1)) ? 'rotate '+time3+'s ease-in-out infinite alternate' : 'rotate1 '+time3+'s ease-in-out infinite alternate';
+		})
+	})();
+
+	//获奖名单自动滚动
+	var listBox = document.querySelector('.list_box');
+	var listUl = document.querySelector('.listUl');
+	var cloneDiv = document.querySelector('.cloneDiv');
+
+	cloneDiv.innerHTML = listUl.innerHTML;
+	var timer = setInterval(function scrollDiv(){
+		if(listBox.scrollTop>=listUl.offsetHeight){
+			listBox.scrollTop=0;
+		}
+		else{
+			listBox.scrollTop=listBox.scrollTop+1;
+		}
+	},100)
+
+
+	//动画的实现代码
+	var merry_hand = document.querySelector('.merry_hand');
+	var snowBall = document.querySelector('.snowBall');
+	var btn = document.querySelector('.btn');
+	var hand_top = document.querySelector('.hand_top');
+	var snowtree1 = document.querySelector('.snowtree1');
+	var snowtree2 =	document.querySelector('.snowtree2');
+	var merryLayer = document.querySelector('.merryLayer');
+	var merry_count = document.querySelector('.merry_count p');
+	var none_merry = document.querySelector('.none_merry');
+	var btn1 = document.querySelector('.btn1');
+	var btn2 = document.querySelector('.btn2');
+
+	var num = merry_count.innerHTML;
+
+	btn.onclick = function(){
+		if(num>0){
+			//还有多少次的代码
+			num--;
+			merry_count.innerHTML = num;
+
+			//点击开始动画
+			merry_hand.style.animationPlayState=merry_hand.style.WebkitAnimationPlayState=merry_hand.style.MozAnimationPlayState=merry_hand.style.MsAnimationPlayState=merry_hand.style.OAnimationPlayState="paused";
+			hand_top.style.transform = hand_top.style.WebkitTransform = hand_top.style.MozTransform = hand_top.style.MsTransform = hand_top.style.OTransform ="rotateY(55deg) translate(-10px)";
+			btn.style.display = 'none';
+			snowBall.style.transform = snowBall.style.WebkitTransform = snowBall.style.MozTransform = snowBall.style.MsTransform = snowBall.style.OTransform = "rotateY(45deg)";
+
+			//snowBall.style.transform =' scale(0.4)';
+			//snowBall.style.animationPlayState=snowBall.style.webkitAnimationPlayState=snowBall.style.mozAnimationPlayState=snowBall.style.msAnimationPlayState=snowBall.style.oAnimationPlayState="paused";
+			//snowBall.style.animationPlayState=snowBall.style.webkitAnimationPlayState=snowBall.style.mozAnimationPlayState=snowBall.style.msAnimationPlayState=snowBall.style.oAnimationPlayState="running";
+			//snowBall.style.animation = snowBall.style.WebkitAnimation = snowBall.style.MozAnimation = snowBall.style.MsAnimation = snowBall.style.OAnimation = 'ballMove 0.7s linear forwards '
+
+			//snowBall.className='snowBall donghua';
+			//snowBall.setAttribute('class','snowBall donghua')
+			$('.snowBall').addClass('donghua')
+			//监听事件的兼容写法
+			var pfx = ["webkit", "moz", "MS", "o", ""];
+			function PrefixedEvent(element, type, callback) {
+				for (var p = 0; p < pfx.length; p++) {
+					if (!pfx[p]) type = type.toLowerCase();
+					element.addEventListener(pfx[p]+type, callback, false);
+				}
+			}
+
+			var m=0
+			PrefixedEvent(snowBall,"AnimationEnd",function(){
+				m++;
+				if(m==1){
+					boom("myCanva","snowball.png").go();
+
+					//snowBall.style.animationPlayState=snowBall.style.WebkitAnimationPlayState=snowBall.style.MozAnimationPlayState=snowBall.style.MsAnimationPlayState=snowBall.style.OAnimationPlayState="paused";
+					setTimeout(function(){
+						snowBall.style.display = 'none';
+						snowtree1.style.transform = snowtree1.style.WebkitTransform =snowtree1.style.MozTransform =snowtree1.style.MsTransform =snowtree1.style.OTransform ='rotate(20deg)';
+						snowtree2.style.transform = snowtree2.style.webkitTransform =snowtree2.style.mozTransform =snowtree2.style.msTransform =snowtree2.style.oTransform ='rotate(-20deg)';
+					},20)
+				}
+			})
+
+
+			/*snowBall.addEventListener('animationend',function(){
+
+			})*/
+			var n = 0;
+			PrefixedEvent(snowtree1, 'transitionend', function(){
+				n++;
+				if(n==1){
+					setTimeout(function(){
+						snowBall.style.transform = snowBall.style.WebkitTransform = snowBall.style.MozTransform = snowBall.style.MsTransform = snowBall.style.OTransform = "rotateY(0deg)";
+						//snowBall.className='snowBall';
+						$('.snowBall').removeClass('donghua')
+						//snowBall.setAttribute('class','snowBall')
+						merryLayer.style.display = 'block';
+						snowBall.style.display = 'block';
+						btn.style.display = 'block';
+
+						hand_top.style.transform = hand_top.style.webkitTransform =hand_top.style.mozTransform =hand_top.style.msTransform = hand_top.style.oTransform ="rotateY(0deg) translate(0px)";
+						merry_hand.style.animationPlayState=merry_hand.style.webkitAnimationPlayState=merry_hand.style.mozAnimationPlayState=merry_hand.style.msAnimationPlayState=merry_hand.style.oAnimationPlayState="running";
+						snowtree1.style.transform = snowtree1.style.webkitTransform = snowtree1.style.mozTransform = snowtree1.style.msTransform = snowtree1.style.oTransform ='rotate(0deg)';
+						snowtree2.style.transform = snowtree2.style.webkitTransform =snowtree2.style.mozTransform =snowtree2.style.msTransform =snowtree2.style.oTransform ='rotate(0deg)';
+
+					},300)
+				}
+			})
+
+			/*snowtree1.addEventListener('transitionend',function(){
+
+			})*/
+
+		}else{
+			none_merry.style.display = 'block';
+		}
+
+	}
+
+	btn1.onclick  = function(){
+		merryLayer.style.display = 'none';
+	}
+
+	btn2.onclick = function(){
+		none_merry.style.display = 'none';
+	}
+
+
+
+
+
+</script>

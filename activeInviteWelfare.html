@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>邀请好友福利升级</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+</head>
+<body>
+	<div class="activeInviteWelfare"></div>
+    <div class="invitefriendWelfare">
+		<div class="welInvite">
+			<div class="friendBox" >
+				<h2>邀请好友数量</h2>
+				<div class="friendNum">
+					<span>-</span>
+					<span>-</span>
+					<span>8</span>
+					<span>8</span>
+				</div>
+			</div >
+			<div class="moneyBox" >
+				<h2>邀请好友投资金额总数</h2>
+				<div class="moneyNum">
+					<span class="spanNum"></span>
+					<span class="spanNum"></span>
+					<span class="spanNum"></span>
+					<span class="spanNum"></span>
+					<span class="spanNum"></span>
+					<span class="spanNum"></span>
+					<span class="spanNum"></span>
+				</div>
+			</div>
+		</div>
+		<div class="activeWelfareRule"></div>
+		<p class="inviteP">本次活动与苹果公司无关，最终解释权归悠兔理财所有</p>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var isBegin = false;
+	var result = '0';
+	var u = 1.8;
+
+	(function(){
+		if(isBegin) return false;
+		isBegin = true;
+		$(".spanNum").css('backgroundPositionY','0rem');
+
+		var new_arr = ["0","0","0","0","0","0","0"];
+		var num_arr = (result+'').split('');
+		var num = num_arr.length;
+		new_arr.reverse().splice(0,num);
+		new_arr.reverse();
+		new_arr = new_arr.concat( num_arr );
+		console.log(num_arr)
+		console.log(new_arr)
+		$(".spanNum").each(function(index){
+			var _num = $(this);
+			setTimeout(function(){
+				_num.animate({
+					backgroundPositionY: (u*10) - (u*new_arr[index]) + 'rem'
+				},{
+					duration: 1000+index*1000,
+					easing: "easeInCirc",
+					complete: function(){
+						if(index==6) isBegin = false;
+					}
+				});
+			}, index * 300);
+		});
+	})();
+</script>

@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>悠兔周年——818攒钱节</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/lottery.js"></script>
+	<script type="text/javascript" src="js/alias-method.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div class="ytYear818">
+		<div class="banner"></div>
+		<div class="yearContent" id="app">
+			<div class="year818Main">
+				<div class="yearsFirst">
+					<h2 class="title"></h2>
+					<div class="yearFirstBox">
+						<div>
+							<h5>新手专享 , 提息 <span>8.18%</span></h5>
+							<p>活动期间,新注册用户将获得<span>8.18%</span>的加息券，即标的利率+8.18%，使用有效期为<span>1</span>个月。还等什么，赶紧告诉小伙伴来注册吧！</p>
+						</div>
+						<div style="margin-top:0.5rem;">
+							<h5>邀请好友，得现金 <span>81.8元</span></h5>
+							<p>1.活动期间邀请好友注册悠兔理财，好友注册时需填写邀请人的邀请码。如果漏填，可在账户-邀请好友中补填。(邀请人数不设限) </p>
+							<p>2.好友注册后单笔投资金额大于或等于2W，且标的满标审核通过。</p>
+							<p>3.获得的81.8元将以体验金形式发放到邀请者账户中。</p>
+						</div>
+					</div>
+					<a href="javascript:;" class="year_gotoBtn"></a>
+				</div>
+				<div class="yearSecond">
+					<div class="title"></div>
+					<p class="secondTextInfo">单笔投资满5W，即可获得一次抽奖机会。<br><span>中奖率100%！</span>丰厚奖品等你拿~</p>
+					<a href="javascript:;" class="ys_myPrize">我的奖励</a>
+					<div id="lottery">
+						<table   border="0" cellpadding="0" cellspacing="5">
+							<tr class="lottery-group">
+								<td class="lottery-unit td_1 act" data-lottery-reward="8888抵扣券">
+									<img src="images/year818/prize_1.png"/>
+								</td>
+								<td class="lottery-unit td_2" data-lottery-reward="小米充电宝">
+									<img src="images/year818/prize_2.png"/>
+								</td>
+								<td class="lottery-unit td_3" data-lottery-reward="10万体验金">
+									<img src="images/year818/prize_3.png"/>
+								</td>
+							</tr >
+							<tr class="lottery-group">
+								<td class="lottery-unit td_4" data-lottery-reward="iphone8预购券">
+									<img src="images/year818/prize_4.png"/>
+								</td>
+								<td class="td_5"><a href="javascript:;"><p>剩余<span class="prizeNum">0</span>次</p></a></td>
+								<td class="lottery-unit td_6" data-lottery-reward="20万体验金">
+									<img src="images/year818/prize_5.png"/>
+								</td>
+							</tr>
+							<tr class="lottery-group">
+								<td class="lottery-unit td_7" data-lottery-reward="5%加息券">
+									<img src="images/year818/prize_6.png"/>
+								</td>
+								<td class="lottery-unit td_8" data-lottery-reward="5万体验金">
+									<img src="images/year818/prize_7.png"/>
+								</td>
+								<td class="lottery-unit td_9" data-lottery-reward="6%加息券">
+									<img src="images/year818/prize_8.png"/>
+								</td>
+							</tr>
+						</table>
+						<!--<p class="change">您还剩<b class="lastNum">5</b>次机会</p>-->
+					</div>
+					<div class="prize_list">
+						<div class="prize_list_main">
+							<ul class="prizeUl">
+								<li v-for="item in listDate">
+									<p>{{ item[0] }}</p>
+									<p>{{ item[1] }}</p>
+									<p>{{ item[2] }}</p>
+								</li>
+							</ul>
+							<ul class="clonePrizeUl"></ul>
+						</div>
+					</div>
+				</div>
+				<div class="yearThird">
+					<h2 class="title"></h2>
+					<div class="thirdContent clearfix">
+						<div class="thirdText ">
+							<p>8月18号当天，系统将在<span>10点、11点、12点、14点、15点整点</span>针对第一个投资用户发放<span>高达8%</span>利率的加息券 一张，该券使用有效期为1个月。拼手速，谁快谁得！</p>
+						</div>
+						<div class="thirdPic "></div>
+					</div>
+					<div class="thirdMain clearfix">
+						<div class="thirdPic1"></div>
+						<div class="thirdText1 " >
+							<p>8月18号当天，系统将分别在<span>10点、11点、12点、14点、15点整点发放20倍、15倍、10倍体验金</span>的标的各一个。体验金拿到手软，金额有限，千万不要错过哟！</p>
+						</div>
+					</div>
+				</div>
+				<div class="yearFour">
+					<div class="title"></div>
+					<p class="yearP">微信公众号<span>签到，轻松得精美奖品!</span></p>
+					<div class="yearPrize"></div>
+					<p class="yearText">扫二维码 关注悠兔理财订阅号</p>
+					<div class="yearEr"></div>
+				</div>
+				<div class="year818rule">
+					<div class="title"></div>
+					<ul>
+						<li>1：新手加息券的发放标准为该用户在活动期间内注册。 </li>
+						<li>2：邀请好友奖励为邀请的用户在活动期间内注册，并第一笔投资大于等于2万，即获得体验金奖励。</li>
+						<li>3：用户每笔投资大于5万的投资，即获得一次抽奖机会。（例：如单笔投资20万即增加1次抽奖机会）</li>
+						<li>4：8月18日整点第一名投资用户奖励在当日18点前统一发放。</li>
+						<li>5：获得iphone8预购券和充电宝的用户，将有客服联系您告知相关领取事宜。</li>
+						<li>6：用户可至账户一栏查看获得的体验金和投资的体验标具体情况。</li>
+						<li>7：在本活动中发现任务违规操作或作弊行为（包括恶意刷特权本金，恶意虚假账户等），悠兔将有权取消该账号的体验金，折扣券，加息券资格</li>
+					</ul>
+				</div>
+			</div>
+			<p class="textYear818">本次活动与苹果公司无关，最终解释权归悠兔理财所有</p>
+		</div>
+
+	</div>
+
+   <div class="yt_prize_alert" style="display:none;">
+		<div class="yt_prize_box">
+			<b class="closedIcon"></b>
+			<!--<i class="yt_icon noprizeIcon prizeIcon"></i>-->
+			<i class="yt_icon "></i>
+			<p class="prizeContent"></p>
+			<div class="yt_prize_btn">
+				<!--<a href="javascript:;" class="knowBtn">知道了</a>
+				<a href="javascript:;" class="prizeInvest">去投资</a>-->
+				<!--<a href="javascript:;" class="prizeSee">去看看</a>-->
+			</div>
+		</div>
+   </div>
+
+   <div class="yt_prize_list_main" style="display:none;">
+		<div class="yt_prize_list">
+			<i></i>
+			<b class="closedIcon"></b>
+			<div class="prizelist_content">
+				<h2>我的奖励</h2>
+				<div class="prizeHeader clearfix">
+					<p>获奖时间</p>
+					<p>奖品</p>
+				</div>
+				<div class="myPrize_list_content">
+					<div class="noPrizeData">
+						<p>暂无数据</p>
+					</div>
+					<!--<div style="display:none;">
+						<ul >
+							<li>
+								<p>2017.8.18  10:30:58</p>
+								<p>小米定制充电宝</p>
+							</li>
+							<li>
+								<p>2017.8.18  10:30:58</p>
+								<p>小米定制充电宝</p>
+							</li>
+							<li>
+								<p>2017.8.18  10:30:58</p>
+								<p>小米定制充电宝</p>
+							</li>
+							<li>
+								<p>2017.8.18  10:30:58</p>
+								<p>小米定制充电宝</p>
+							</li>
+							<li>
+								<p>2017.8.18  10:30:58</p>
+								<p>小米定制充电宝</p>
+							</li>
+							<li>
+								<p>2017.8.18  10:30:58</p>
+								<p>小米定制充电宝</p>
+							</li>
+							<li>
+								<p>2017.8.18  10:30:58</p>
+								<p>小米定制充电宝</p>
+							</li>
+						</ul>
+					</div>-->
+
+				</div>
+				<div class="myPrize_list_info">
+					<p>1.所获体验金、加息券等线上奖品请到账户中查看。</p>
+					<p>2.若获得奖品为充电宝、iPhone8预购券则由客服线下在5个工作日内联系用户。</p>
+				</div>
+			</div>
+		</div>
+   </div>
+</body>
+</html>
+<script>
+	$(function() {
+
+		//获取当前当前时间时分秒
+
+		function Random(s,e){return parseInt(Math.random()*(e-s)+s);};
+
+		function time( ){
+			var newDate = new Date();
+
+			var h = newDate.getHours()-Random(0,3);
+			if(h<0){
+				h = 0;
+			}
+			var m = newDate.getMinutes()-Random(1,59);
+			if(m<0){
+				m = 0;
+			}
+			var ms = Math.abs(newDate.getSeconds()-Random(1,59));
+
+			h<10 ? h='0'+h : h;
+			m<10 ? m='0'+m : m;
+			ms<10 ? ms='0'+ms : ms;
+
+			return h + ':'+ m +":" +ms;
+		}
+
+		var arrTime = [];
+		for(var i= 0;i<20;i++){
+			var times =  time( );
+			arrTime.push(times);
+		}
+		arrTime.sort();
+		//console.log(arrTime);
+
+		var iphone = ['183XXXX6541','182XXXX7547','135XXXX9939','187XXXX1440','186XXXX7181','159XXXX5753','185XXXX1862','135XXXX3663','138XXXX2446','139XXXX5087','139XXXX6491','159XXXX9357',
+			'131XXXX6839','135XXXX1900','147XXXX8681','150XXXX3287','136XXXX9572','159XXXX9643','152XXXX2027','139XXXX3485']
+
+
+		var vm = new Vue({
+			el:'#app',
+		    data:{
+				listDate:[
+					[arrTime[0],iphone[Random(0,19)],'20W体验金'],[arrTime[1],iphone[Random(0,19)],'小米定制充电宝'],[arrTime[2],iphone[Random(0,19)],'8888抵扣券'],[arrTime[3],iphone[Random(0,19)],'20W体验金'],
+					[arrTime[4],iphone[Random(0,19)],'5W体验金'],[arrTime[5],iphone[Random(0,19)],'6%加息券'],[arrTime[6],iphone[Random(0,19)],'iphone8预购券'],[arrTime[7],iphone[Random(0,19)],'8888抵扣券'],
+					[arrTime[8],iphone[Random(0,19)],'20W体验金'],[arrTime[9],iphone[Random(0,19)],'小米定制充电宝'],[arrTime[10],iphone[Random(0,19)],'10W体验金'],[arrTime[11],iphone[Random(0,19)],'8888抵扣券'],
+					[arrTime[12],iphone[Random(0,19)],'10W体验金'],[arrTime[13],iphone[Random(0,19)],'20W体验金'],[arrTime[14],iphone[Random(0,19)],'小米定制充电宝'],[arrTime[15],iphone[Random(0,19)],'5W体验金'],
+					[arrTime[16],iphone[Random(0,19)],'8888抵扣券'],[arrTime[17],iphone[Random(0,19)],'5%加息券'],[arrTime[18],iphone[Random(0,19)],'10W体验金'],[arrTime[19],iphone[Random(0,19)],'小米定制充电宝']
+		         ]
+	        }
+		})
+
+
+
+	//获奖名单自动滚动
+		var welfareList = document.querySelector('.prize_list_main');
+		var listUl = document.querySelector('.prizeUl');
+		var cloneDiv = document.querySelector('.clonePrizeUl');
+
+		cloneDiv.innerHTML = listUl.innerHTML;
+
+
+		var timer = setInterval(function scrollDiv(){
+			if(welfareList.scrollTop>=listUl.offsetHeight){
+				welfareList.scrollTop=0;
+			}
+			else{
+				welfareList.scrollTop = welfareList.scrollTop + 1;
+			}
+		},150)
+
+
+
+		$("#lottery").lottery({
+			selector:     '#lottery',
+			width:        3,
+			height:       3,
+			change:       3,
+			index:        0,    // 初始位置
+			initSpeed:    300,  // 初始转动速度
+			// upStep:       50,   // 加速滚动步长
+			// upMax:        50,   // 速度上限
+			// downStep:     30,   // 减速滚动步长
+			// downMax:      500,  // 减速上限
+			// waiting:      5000, // 匀速转动时长
+			aim: function () {
+				var prizeArray = new Array();
+				var gutoufan = new AliasMethod.Prize(0, "8888抵扣券", 0.10);
+				prizeArray.push(gutoufan);
+				var dazuiba = new AliasMethod.Prize(1, "小米充电宝", 0.1);
+				prizeArray.push(dazuiba);
+				var qiandaohu = new AliasMethod.Prize(2, "10万体验金", 0.20);
+				prizeArray.push(qiandaohu);
+				var quzhoucai = new AliasMethod.Prize(3, "20万体验金", 0.10);
+				prizeArray.push(quzhoucai);
+				var laodifang = new AliasMethod.Prize(4, "6%加息券", 0.1);
+				prizeArray.push(laodifang);
+				var huangmenji = new AliasMethod.Prize(5, "5万体验金", 0.1);
+				prizeArray.push(huangmenji);
+				var zhengbaihui = new AliasMethod.Prize(6, "5%加息券", 0.1);
+				prizeArray.push(zhengbaihui);
+				var dengdeng = new AliasMethod.Prize(7, "iphone8预购券", 0.20);
+				prizeArray.push(dengdeng);
+
+				AliasMethod.init(prizeArray);
+				return AliasMethod.generate().index;
+			},
+			beforeRoll: function () { // 重写滚动前事件：beforeRoll
+				// console.log(this);
+				// alert(1);
+				console.log('beforeRoll');
+
+
+
+
+			},
+			afterStop: function (targetElement) {
+				//alert($(targetElement).data('lottery-reward'));
+
+				$('.prizeContent').html('恭喜您获得<span>'+$(targetElement).data('lottery-reward')+'</span>');
+				$('.yt_icon').addClass('prizeIcon');
+				$('.yt_prize_btn').html('<a href="javascript:;" class="prizeSee">去看看</a>');
+				$('.yt_prize_alert').show();
+
+
+
+				return false;
+			}
+
+		});
+
+		//中奖之后的关闭按钮
+		$('.yt_prize_box .closedIcon').click(function(){
+
+			$(' .yt_prize_alert').hide();
+		})
+		$(" .yt_prize_alert").on("click",".knowBtn", function() {
+			$('.yt_prize_alert').hide();
+		});
+
+
+
+		//我的奖励的弹窗开启和关闭
+		$('.ys_myPrize').click(function(){
+			$('.yt_prize_list_main').show();
+		})
+		$('.closedIcon').click(function(){
+
+			$('.yt_prize_list_main').hide();
+		})
+
+
+		//去看看的按钮的弹窗显示
+		$(" .yt_prize_alert").on("click",".prizeSee", function() {
+			$('.yt_prize_alert').hide();
+			$('.yt_prize_list_main').show();
+		});
+
+
+		//去投资判断是安卓还是IOS然后跳转链接到原生页面
+		$(" .yt_prize_alert").on("click",".prizeInvest", function() {
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+			if(isAndroid){
+				//alert('安卓最帅');
+				activity.jumpNative();
+
+			}else if(isiOS){
+
+				//alert('IOS最美 ');
+				goToFinancial();
+			}
+		})
+
+		//去邀请判断是安卓还是IOS然后跳转链接到原生页面
+		$('.year_gotoBtn').click(function(){
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;  //android终端
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);    //ios终端
+			if(isAndroid){
+				//alert('安卓最帅');
+				activity.jumpInvert();
+
+			}else if(isiOS){
+
+				//alert('IOS最美 ');
+				goToInvite();
+			}
+		})
+
+
+	});
+</script>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="css/animate.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>愚人节活动</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<div class="activeAprilBox padtop0" >
+		<div class="aprilClickBox" style="display:none;">
+			<div class="boxApril"></div>
+			<div class="aprilText" style="display:none;"><p>ｘ<span>1.0</span> 倍</p></div>
+			<div class="aprilStar1"></div>
+			<div class="aprilStar2"></div>
+			<div class="aprilStar3"></div>
+			<div class="aprilStar4"></div>
+			<div class="aprilStar5"></div>
+			<div class="aprilStar6"></div>
+		</div>
+	</div>
+	<div class="aprilFixed">
+		<div class="fixedBox">
+			<p class="fixedP">3</p>
+		</div>
+		<p class="aprilInfo">根据您的点击速度<br>决定标的的收益加成倍数</p>
+	</div>
+
+	<div class="aprilAlert_box">
+		<!--未中奖结构-->
+		<div class="carrot_box">
+			<p>您获得一根胡萝卜</p>
+			<a href="javascript:;" class="carrotBtn"></a>
+			<a href="activeApril.html" class="closeBtn"></a>
+		</div>
+
+
+		<!--中奖加息券结构-->
+		<!--<div class="prize_box">
+			<p>获得0.5%的加息券</p>
+			<a href="activeApril.html" class="prizeBtn"></a>
+			<a href="activeApril.html" class="closeBtn"></a>
+		</div>-->
+
+		<!--领取成功结构-->
+		<!--<div class="prize_box">
+			<p>领取成功</p>
+			<a href="javascript:;" class="successBtn"></a>
+			<a href="activeApril.html" class="closeBtn"></a>
+		</div>-->
+
+
+		<!--判断手机号注册的结构-->
+		<!--<div class="tips_box">
+			<div class="tipsMain">
+				<input type="text" placeholder="请输入手机号">
+				<p>(您的手机号尚未注册)</p>
+			</div>
+			<a href="javascript:;" class="successBtn"></a>
+			<a href="activeApril.html" class="closeBtn"></a>
+		</div>-->
+
+		<!--去注册的弹窗-->
+		<!--<div class="tips_box">
+			<p class="registerP">您的手机号尚未注册</p>
+			<a href="javascript:;" class="goRegister"></a>
+			<a href="activeApril.html" class="closeBtn"></a>
+		</div>-->
+
+
+		<div class="aprilStar1"></div>
+		<div class="aprilStar2"></div>
+		<div class="aprilStar3"></div>
+		<div class="aprilStar4"></div>
+		<div class="aprilStar5"></div>
+		<div class="aprilStar6"></div>
+	</div>
+</body>
+</html>
+<script>
+	$(function(){
+		//倒计时关闭遮罩
+		var fixedP = $('.fixedP').text();
+		var timer = setInterval(function(){
+			if(fixedP > 0){
+				fixedP--
+			}else{
+				$('.aprilFixed').hide();
+				clearInterval(timer);
+				$('.aprilClickBox').show();
+			}
+			$('.fixedP').html(fixedP);
+		},3000)
+
+
+		//点击增加倍数
+		var spanValue = parseFloat($('.aprilText p span').text());
+		var boxApril = document.querySelector('.boxApril');
+		wbl.tap(boxApril,function(e){
+			$('.aprilText').show();
+			spanValue += (0.1);
+			$('.aprilText p span').text(spanValue.toFixed(1));
+			alertBox();
+		})
+
+
+		function alertBox(){
+			setTimeout(function(){
+				$('.aprilClickBox').hide();
+				$('.aprilAlert_box').show();
+			},3000)
+		}
+
+	})
+</script>

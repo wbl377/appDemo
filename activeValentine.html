@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>情人节活动</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<div class="valentineMain">
+		<div class="valentineHd"></div>
+		<div class="valentineIphon">
+			<form >
+				<input type="text" placeholder="请输入情侣手机号码"  class="inputPhone"/>
+				<a href="javascript:;" class="lovePhone"></a>
+				<i></i>
+			</form>
+			<p class="valtips"></p>
+		</div>
+		<div class="valentineRule"></div>
+		<div  class="valenBox" >
+			<div class="valenRanking">
+				<div class="valenList">
+					<ul>
+						<li>
+							<div class="phoneNum">
+								<span>189****7897</span>
+								<span>189****7897</span>
+							</div>
+							<div class="listNum">
+								<span>1</span>
+							</div>
+							<p>500000000</p>
+						</li>
+						<li class="current">
+							<div class="phoneNum">
+								<span>189****7897</span>
+								<span>189****7897</span>
+							</div>
+							<div class="listNum">
+								<span>2</span>
+							</div>
+							<p>6000000</p>
+						</li>
+
+						<li>
+							<div class="phoneNum">
+								<span>189****7897</span>
+								<span>189****7897</span>
+							</div>
+							<div class="listNum">
+								<span>4</span>
+							</div>
+							<p>90000</p>
+						</li>
+						<li>
+						<div class="phoneNum">
+							<span>189****7897</span>
+							<span>189****7897</span>
+						</div>
+						<div class="listNum">
+							<span>5</span>
+						</div>
+						<p>3000</p>
+					</li>
+					</ul>
+				</div>
+				<div class="myRank clearfix">
+					<p>我的情侣排名:NO.99999</p>
+					<p>123456</p>
+				</div>
+			</div>
+			<i></i>
+		</div>
+		<div class="valenInfo"></div>
+		<a class="myLove" href="javascript:;" ></a>
+	</div>
+
+	<!--弹窗页面的额结构-->
+	<div class="valenLayer">
+		<div class="layerLove">
+			<div class="loveInfo">
+				<h5>189****7898</h5>
+				<p>一辈子辣么长,<br/>我已经把你提前预定了</p>
+				<!--<p style="line-height:1rem;padding-top:0.5rem;">你已被 <span>189****7898</span> 成功绑定 <br><span>获得520情侣基金</span></p>-->
+			</div>
+			<div class="loveBtn">
+				<a href="javascript:;" class="btnLook">查看</a>
+				<a href="javascript:;" class="btnClose">关闭</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	$(function(){
+		$('.inputPhone').focus(function(){
+			$('.valtips').text(' ');
+		})
+		//点击输入框后面的按钮代码
+		$('.lovePhone').click(function(){
+			var phoneNum = $('.inputPhone').val();
+
+			if(phoneNum == ''){
+				$('.valtips').text('请输入情侣手机号码！');
+			}else if(phoneNum == 1){
+				$('.valtips').text('请输入正确的手机号码！');
+			}else if(phoneNum == 2){
+				$('.valtips').text('您输入的手机号码尚未注册！');
+			}else if(phoneNum == 3){
+				$('.valtips').text('您输入的手机号码已被绑定！');
+			}else if(phoneNum == 4){
+				$('.valtips').text('用户不能绑定自己的手机号码');
+			}else{
+				$('.valenLayer').show();
+			}
+		})
+
+		$('.btnClose').click(function(){
+
+			$('.valenLayer').hide();
+
+		})
+
+
+	})
+</script>

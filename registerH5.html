@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>注册</title>
+    <link type="text/css" rel="stylesheet" href="css/base.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/style.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head> 
+<body>
+<div class="container">
+    <div class="mainBox">
+        <form>
+            <div class="warpBox pl-5">
+                <label>姓名：</label>
+                <input type="text" placeholder="请输入姓名" class="warpInput" />
+            </div>
+            <div class="warpBox">
+                <label>手机号码：</label>
+                <input type="text" placeholder="请输入手机号" class="warpInput" />
+            </div>
+            <div class="warpBox pl-2-5">
+                <label>验证码：</label>
+                <input type="text" placeholder="请输入验证码" class="warpInput" />
+                <input id="countDown" type="button" value="获取验证码" >
+            </div>
+            <div >
+                <label>登录密码：</label>
+                <input type="password" placeholder="请输入（6-16位字母、数字、字符组合）" class="warpInput"
+                       style="width:11rem;" />
+            </div>
+            <div class="warpchecked">
+                <input type="checkbox" checked=""><a href="javascript:;">我已阅读注册协议</a>
+            </div>
+
+            <a href="javascript:;" class="gotoBtn" >马上注册</a>
+        </form>
+    </div>
+
+   <div class="layer" style="display:none;">
+        <div class="layerbox">
+            <div class="layerHeader">
+                <p>提　示</p>
+                <i></i>
+            </div>
+            <div class="layerBd">
+                <p>该手机号已被注册！</p>
+                <a href="javascript:;" class="larerBtn">确　认</a>
+            </div>
+        </div>
+    </div> 
+</div>
+<script type="text/javascript">
+
+    $(function() {
+        $('.gotoBtn').click(function(event) {
+            $('.layer').show();
+        });
+        $('.larerBtn,.layerHeader i').click(function(event) {
+            $('.layer').hide();
+        });
+    });
+</script>
+</body>
+
+</html>

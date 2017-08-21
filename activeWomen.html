@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>女神节活动</title>
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<div class="activeWomen">
+		<div class="womenBaner"></div>
+		<div class="womenRule"></div>
+		<div class="myWelfare">
+			<div class="womenWelfaer">
+				<div class="welfareList">
+					<div class="男生" style="display:none;">
+						<ul>
+							<li>
+								<p>189****1111</p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="menBtn">赠 送</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111</p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="menBtn">赠 送</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111</p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="menDis">已赠送</a>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="女生" >
+						<ul>
+							<li>
+								<p>189****1111</p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="womenBtn ">领 取</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111</p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="womenBtn ">领 取</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111<br/><span>（赠送）</span></p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="womenDis">已领取</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111<br/><span>（赠送）</span></p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="womenDis">已领取</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111<br/><span>（赠送）</span></p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="womenDis">已领取</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111<br/><span>（赠送）</span></p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="womenDis">已领取</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111<br/><span>（赠送）</span></p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="womenDis">已领取</a>
+								</p>
+							</li>
+							<li>
+								<p>189****1111<br/><span>（赠送）</span></p>
+								<p>2017.02.23</p>
+								<p>女神小礼</p>
+								<p>
+									<a href="javascript:;" class="womenBtn womenDis">已领取</a>
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="womenInfo">
+			<div class="inWoemen"></div>
+		</div>
+
+	</div>
+
+
+	<div class="menLayer" >
+		<div class="menGive">
+			<i class="menCloseBtn"></i>
+			<div class="giveBox">
+				<div>
+					<input type="text" placeholder="填写赠送手机号" class="inputVal">
+					<b class="infoImg"></b>
+				</div>
+				<p class="giveP"></p>
+			</div>
+			<a href="javascript:;" class="giveBtn">确定</a>
+		</div>
+	</div>
+
+	<div class="womenLayer">
+		<div class="womenGet">
+			<i class="womenCloseBtn"></i>
+			<div class="getBox">
+				<p class="getP"></p>
+			</div>
+			<a href="javascript:;" class="getBtn">确定</a>
+		</div>
+	</div>
+
+
+</body>
+</html>
+<script>
+	$(function(){
+		//男生的弹窗
+		$('.menBtn').click(function(){
+			$('.menLayer').show();
+		})
+		$('.menCloseBtn').click(function(){
+			$('.menLayer').hide();
+
+		})
+
+
+		$('.giveBtn').click(function(){
+
+			var inputVal = $('.inputVal').val();
+
+			if(inputVal == ''){
+				$('.giveP').text('手机号不能为空！');
+				$('.infoImg').attr('class','infoErrImg')
+			}else if(inputVal == 1){
+				$('.giveP').text('该手机号不存在！');
+				$('.infoImg').attr('class','infoErrImg')
+			}else if(inputVal == 2){
+				$('.giveP').text('该用户没有实名注册！');
+				$('.infoImg').attr('class','infoErrImg')
+			}else if(inputVal == 3){
+				$('.giveP').text('该用户不是女性用户！');
+				$('.infoImg').attr('class','infoErrImg')
+			}else{
+				$('.infoImg').attr('class','infoRight')
+			}
+		})
+
+
+		//女生页面的弹窗
+		$('.womenBtn').click(function(){
+			$('.womenLayer').show();
+			$(this).unbind("click")
+		})
+		$('.womenCloseBtn').click(function(){
+			$('.womenLayer').hide();
+		})
+
+		$('.womenBtn').click(function(){
+			$('.womenLayer').show();
+			//$('.getBox').html('<p style="padding-top:1.2rem;">成功获得“女神小礼”</p>')
+			$('.getBox').html('<p style="padding-top:0.9rem;">成功获得<br>女神大礼”、“女神小礼”</p>')
+		})
+
+
+		
+
+
+
+	})
+</script>
